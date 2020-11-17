@@ -10,10 +10,31 @@
     /* colors */
     --color-alpha-light: MEDIUMSLATEBLUE;
     --color-alpha: SLATEBLUE;
-
+    --color-background: #F0F0F7;
+    --color-tablehead:#F5F6FA;
+    --color-icons-unselected: #A5A4BF;
     --color-neutral-light: LIGHTSLATEGRAY;
     --color-neutral: SLATEGRAY;
     --color-neutral-dark: DARKSLATEGRAY;
+    --color-neutral-darkblue:#43425D;
+    --color-neutral-darkblue-x:#3B3B53;
+    --color-neutral-lightblack:#00000019;
+    --color-neon-blue:#55D8FE;
+    --color-neon-purple:#A3A0FB;
+    --color-neon-green:#5EE2A0;
+    --color-neon-darkgreen: #3CC480;
+    --color-neon-red:#FF4141;
+    --color-font:#4D4F5C;
+
+    --global-baseline: 5px;
+    --global-whitespace-xxs: var(--global-baseline);
+    --global-whitespace-xs: calc(var(--global-baseline) * 2);
+    --global-whitespace-sm: calc(var(--global-baseline) * 3);
+    --global-whitespace-md: calc(var(--global-baseline) * 4);
+    --global-whitespace-lg: calc(var(--global-baseline) * 5);
+    --global-whitespace-xl: calc(var(--global-baseline) * 6);
+
+
 
     /* Shadows */
 
@@ -34,14 +55,14 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
     font-family: Helvetica, arial, sans-serif;
     color: var(--color-neutral-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: var(--color-background);
 }
 
 *,
@@ -98,20 +119,20 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 10);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h2 {
     font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 8);
+    margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h4,
@@ -119,8 +140,8 @@ h5,
 h6 {
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 p,
@@ -130,7 +151,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 ul,
@@ -294,6 +315,59 @@ input::placeholder {
     ---
     Website main logo
 */
+.c-app{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.c-app_logo{
+    background-color: var(--color-neutral-darkblue-x);
+}
+
+.c-app_topbar{
+    background-color: white;
+    box-shadow: 15px 15px black;
+}
+
+.c-app_sidebar{
+    background-color: var(--color-neutral-darkblue);
+}
+
+.c-app_main{
+
+}
+
+.c-logo{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px 0 20px 20px;
+    color: #fff;
+}
+
+.c-main-nav{
+
+}
+
+.c-main-nav_list{
+
+}
+
+.c-main-nav_icon{
+
+}
+
+.c-main-nav_item{
+
+}
+
+.c-main-nav_link{
+    
+}
 
 /*------------------------------------*\
 #UTILITIES
