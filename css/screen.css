@@ -320,22 +320,25 @@ input::placeholder {
     display: grid;
     grid-template-columns: 260px 1fr;
     grid-template-rows: auto 1fr;
+    --app__topbar-height: calc(var(--global-baseline) * 14);
 }
 
-.c-app_logo{
+.c-app__logo{
     background-color: var(--color-neutral-darkblue-x);
 }
 
-.c-app_topbar{
+.c-app__topbar{
     background-color: white;
-    box-shadow: 15px 15px black;
+    box-shadow: 1px 1px black;
+    height: 100%;
+    width: 100%;
 }
 
-.c-app_sidebar{
+.c-app__sidebar{
     background-color: var(--color-neutral-darkblue);
 }
 
-.c-app_main{
+.c-app__main{
 
 }
 
@@ -350,23 +353,80 @@ input::placeholder {
 }
 
 .c-main-nav{
-
+    margin-bottom: 0;
 }
 
-.c-main-nav_list{
-
+.c-main-nav__list{
+    margin: var(--global-baseline) 0;
 }
 
-.c-main-nav_icon{
 
+.c-main-nav__link{
+    display: flex;
+    -ms-align-items:center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    line-height: 20px;
+    padding: var(--global-whitespace-sm) var(--global-whitespace-lg) var(--global-whitespace-sm) var(--global-whitespace-md);
+    border-left: 5px solid var(--color-icons-unselected);
+    transform: translateX(-5px);
+    width: calc(100% + 5px);
+    transition: all var(--transition-beta);
+}
+.c-main-nav__link:hover{
+    transition: all var(--transition-alpha);
 }
 
-.c-main-nav_item{
-
+.c-main-nav__link,
+.c-main-nav__link:hover,
+.c-main-nav__link:visited{
+    color: white;
 }
 
-.c-main-nav_link{
-    
+.c-main-nav__link:hover,
+.c-main-nav__link:focus,
+.is-selected .c-main-nav__link{
+    color: white;
+    background-color: var(--color-neutral-lightblack);
+    transform: none;
+}
+
+.c-main-nav__icon{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: var(--global-whitespace-xs);
+    fill: var(--color-neutral-light);
+    transition: fill var(--transition-alpha);
+}
+
+.c-main-nav__link:hover .c-main-nav__icon,
+.c-main-nav__link:focus .c-main-nav__icon,
+.is-selected .c-main-nav__icon{
+    fill: var(--color-neon-purple);
+}
+
+
+/* .c-app_sidebar,
+.c-app_main{
+    height: calc(100vh - var(--c-app__topbar-height));
+    overflow-y: auto;
+    overflow-x: hidden;
+} */
+
+.c-app__topbar,
+.c-app__logo{
+    position: sticky;
+    top: 0;
+}
+
+.c-app__sidebar{
+    position: sticky;
+    top: var(--app__topbar-height);
+    height: calc(100vh - var(--app__topbar-height));
+    overflow-y: auto;
 }
 
 /*------------------------------------*\
